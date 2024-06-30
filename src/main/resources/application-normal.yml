@@ -1,0 +1,10 @@
+logging:
+  level:
+    root: info
+    com:
+      vedha: trace
+  file:
+    # path and name of the log file for both logback and log4j2
+    name: logs/spring-boot-logging.log # logback will use to create a rolling file appender
+    # path of the log file for log4j2 only
+    path: logs # for log4j2 is required to create rolling file appender

@@ -1,0 +1,12 @@
+logging:
+  config: classpath:logback-dev.xml
+#  config: classpath:log4j2-dev.xml # spring boot will automatically pick up log4j2-dev.xml file if you have name add it in logging.config
+  file:
+    # path and name of the log file for both logback and log4j2
+    name: logs/spring-boot-logging.log # logback will use to create a rolling file appender
+    # path of the log file for log4j2 only
+    path: logs # for log4j2 is required to create rolling file appender
+  logback:
+    rollingpolicy:
+      max-file-size: 10KB # logback will use to create a rolling file appender with a max file size of 10KB
+      max-history: 5 # logback will use to create a rolling file appender with a max history of 5 files
