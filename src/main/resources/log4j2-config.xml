@@ -8,15 +8,20 @@
         <Property name="FILE_LOG_PATTERN">%d{${sys:LOG_DATEFORMAT_PATTERN}} ${sys:LOG_LEVEL_PATTERN} %pid --- ${sys:LOGGED_APPLICATION_NAME:-}[%t] ${sys:LOG_CORRELATION_PATTERN:-}%-40.40c{1.} : %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
 
         <!--    Getting From Application properties    -->
-<!--        <Property name="LOG_FILE">${sys:LOG_FILE}</Property>-->
-<!--        <Property name="LOG_PATH">${sys:LOG_PATH}</Property>-->
+<!--        <Property name="LOG_FILE">${sys:LOG_FILE:-logs/app-default.log}</Property>-->
+<!--        <Property name="LOG_PATH">${sys:LOG_PATH:-logs}</Property>-->
 
         <!--  For Custom give it as JVM Args (-DCUSTOM_FILE_PATH=logs/app.log) Or Sys Args (CUSTOM_FILE_PATH=logs/app.log) -->
         <!--  For Custom give it as JVM Args (-DCUSTOM_PATH=logs) Or Sys Args (CUSTOM_FILE=logs) -->
-        <Property name="LOG_FILE">${sys:CUSTOM_FILE_PATH}</Property>
-        <Property name="LOG_PATH">${sys:CUSTOM_PATH}</Property>
+        <Property name="LOG_FILE">${sys:CUSTOM_FILE_PATH:-logs/app-default.log}</Property>
+        <Property name="LOG_PATH">${sys:CUSTOM_PATH:-logs}</Property>
 
-        <!--        -->
+        <!--  For Docker Image give it as ENV Args CUSTOM_FILE_PATH=logs/app.log) -->
+        <!--  For Docker Image give it as ENV Args (CUSTOM_PATH=logs) -->
+<!--        <Property name="LOG_FILE">${env:CUSTOM_FILE_PATH:-logs/app-default.log}</Property>-->
+<!--        <Property name="LOG_PATH">${env:CUSTOM_PATH:-logs}</Property>-->
+
+        <!--    Direct Path   -->
 <!--        <Property name="LOG_FILE">logs/test.log</Property>-->
 <!--        <Property name="LOG_PATH">logs</Property>-->
     </Properties>

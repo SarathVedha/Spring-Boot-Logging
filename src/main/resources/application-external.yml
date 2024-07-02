@@ -1,6 +1,6 @@
 logging:
-  config: classpath:logback-dev.xml
-#  config: classpath:log4j2-dev.xml # spring boot will automatically pick up log4j2-dev.xml file if you have name add it in logging.config
+  config: classpath:logback-config.xml
+#  config: classpath:log4j2-config.xml # spring boot will automatically pick up log4j2-config.xml file if you have name add it in logging.config
   file:
     # path and name of the log file for both logback and log4j2
     name: logs/spring-boot-logging.log # logback will use to create a rolling file appender
